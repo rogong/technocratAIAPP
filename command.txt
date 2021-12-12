@@ -1,0 +1,6 @@
+dotnet new sln
+dotnet new webapi -o API
+dotnet sln add API
+dotnet sln list
+
+dotnet ef dbcontext scaffold "Server=.\;Database=AiManager;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Entities
