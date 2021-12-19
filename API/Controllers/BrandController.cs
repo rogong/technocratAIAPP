@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class BrandController : ControllerBase
+    
+    public class BrandController : BaseApiController
     {
         private readonly AiManagerContext _context;
         public BrandController(AiManagerContext context)

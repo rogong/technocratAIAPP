@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace API.Entities
+﻿namespace API.Entities
 {
     public partial class Mention
     {
@@ -29,14 +26,23 @@ namespace API.Entities
         public DateTime? UpdatedOn { get; set; }
         public int DateKey { get; set; }
 
+        
         public virtual DataSource DataSource { get; set; }
+      
         public virtual TimePeriod DateKeyNavigation { get; set; }
+      
         public virtual AbpLanguage Language { get; set; }
+      
         public virtual Market Market { get; set; }
+      
         public virtual Product Product { get; set; }
+      
         public virtual Region Region { get; set; }
+      
         public virtual TopicLevel1 TopicLevel1 { get; set; }
+      
         public virtual TopicLevel2 TopicLevel2 { get; set; }
+      
         public virtual TopicLevel3 TopicLevel3 { get; set; }
     }
 }
