@@ -25,7 +25,6 @@ export default function Feed() {
   const {
     feedsLoaded,
     filtersLoaded,
-    status,
     datasources,
     markets,
     regions,

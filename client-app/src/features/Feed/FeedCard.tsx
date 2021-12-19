@@ -7,7 +7,7 @@ interface Props {
 }
 export default function FeedCard({ mention }: Props) {
   return (
-     <Card>
+     <Card  sx={{mb:2}}>
          <CardHeader
              avatar={
                  <Avatar sx={{bgcolor: 'secondary.main'}}>
