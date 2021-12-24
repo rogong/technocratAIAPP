@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
+import { accountSlice } from "../../features/account/accountSlice";
 import { feedSlice } from "../../features/Feed/feedSlice";
 
 
 
 export const store = configureStore({
     reducer: {
-        feed: feedSlice.reducer
+        feed: feedSlice.reducer,
+        account: accountSlice.reducer
     }
 })
 

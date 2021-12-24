@@ -11,13 +11,13 @@ interface Props {
 export default function FeedList({ mentions }: Props) {
   const {feedsLoaded} = useAppSelector(state => state.feed);
   return (
-    <List>
-      {mentions.map(mention => (
-        <Grid>
+    <List >
+      {mentions.map((mention,index) => (
+        <Grid key={index}>
           {!feedsLoaded ? (
           <FeedCardSkeleton />
         ) : (
-          <FeedCard key={mention.id} mention={mention} />
+          <FeedCard  mention={mention} />
         )}
         </Grid>
       ))}

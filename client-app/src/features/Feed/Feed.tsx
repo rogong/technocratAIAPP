@@ -16,7 +16,6 @@ import CheckboxButtons from '../../app/components/CheckboxButtons';
 import AppPagination from '../../app/components/AppPagination';
 
 const sortOptions = [
-  { value: 'language', label: 'Language' },
   { value: 'dateDesc', label: 'Date - New to Old' },
   { value: 'date', label: 'Date - Old to New' },
 ];
@@ -46,7 +45,7 @@ export default function Feed() {
     return <LoadingComponent message="Loading Feeds..." />;
   return (
     <>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} sx={{ mt: 6 }}>
         {/* Left Side */}
         <Grid item xs>
           <Paper sx={{ mb: 2 }}>
