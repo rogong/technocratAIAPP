@@ -28,7 +28,7 @@ export default function FeedCard({ mention }: Props) {
       /> */}
      <CardContent>
        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-       {mention.mentionEnglish}
+       <a href="http://twitter.com/">{mention.mentionEnglish}</a>
        </Typography>
       
     
@@ -36,6 +36,7 @@ export default function FeedCard({ mention }: Props) {
      <CardActions>
        <Button size="small">{mention.region}</Button> 
        <Button size="small">{mention.keyTerms}</Button> 
+       <Button size="small">{mention.brand}</Button> 
        <TwitterIcon />
      </CardActions>
    </Card>

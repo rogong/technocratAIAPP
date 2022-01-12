@@ -1,11 +1,6 @@
-import {
-  Container,
-  createTheme,
-  CssBaseline,
-  ThemeProvider,
-} from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import AboutPage from '../../features/about/AboutPage';
 import Alert from '../../features/alert/Alert';
@@ -25,7 +20,11 @@ import basicSearch from '../../features/search/BasicSearch';
 import Report from '../../features/report/Report';
 import { useAppDispatch } from '../store/configureStore';
 import { fectchCurrentUser } from '../../features/account/accountSlice';
-
+import SearchResults from '../../features/search/SearchResults';
+import Result from '../../features/search/Result';
+import ForgetPasswordSuccess from '../components/successpages/ForgetPasswordSuccess';
+import ForgetPassword from '../../features/account/ForgetPassword';
+import VerifyEmail from '../../features/account/VerifyEmail';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -33,8 +32,8 @@ function App() {
 
   useEffect(() => {
     dispatch(fectchCurrentUser()).then(() => setLoading(false));
-  }, [dispatch])
-  
+  }, [dispatch]);
+
   const [darkMode, setDarkMode] = useState(false);
   const paletteType = darkMode ? 'dark' : 'light';
 
@@ -56,9 +55,7 @@ function App() {
       <CssBaseline />
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
 
-    
       <Switch>
-     
         <Route exact path="/" component={Home} />
         <Route path="/feed" component={Feed} />
         <Route path="/digest" component={Digest} />
@@ -69,11 +66,18 @@ function App() {
         <Route path="/contact" component={ContactPage} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/forget-password" component={ForgetPassword} />
+        <Route path="/verify-email" component={VerifyEmail} />
+        <Route
+          path="/forget-password-success-page"
+          component={ForgetPasswordSuccess}
+        />
         <Route path="/search" component={basicSearch} />
+        <Route path="/searchresult" component={SearchResults} />
+        <Route path="/result/:term" component={Result} />
         <Route path="/server-error" component={ServerError} />
         <Route component={NotFound} />
       </Switch>
-
     </ThemeProvider>
   );
 }

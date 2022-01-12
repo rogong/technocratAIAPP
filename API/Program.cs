@@ -1,6 +1,7 @@
 using System.Text;
 using API.Entities;
 using API.Helpers;
+using API.Interface;
 using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -81,6 +82,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<TokenService>();
+//builder.Services.AddScoped<AccountHelper>();
+
+
+// configure DI for application services
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+   // configure strongly typed settings object
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+    
 
 var app = builder.Build();
 

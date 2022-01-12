@@ -99,7 +99,7 @@ export default class Services extends Component {
               <Col lg={6}>
                 <div className="pr-4 mt-4">
                   <p className="text-uppercase">why choose us </p>
-                  <h3>Boots Your Website Thamza!</h3>
+                  <h3>Boots Your Website Technocrat!</h3>
                   <p className="text-muted mt-3">Morbi at erat et tortor tempor sodales non eu lacus Donec at gravida
                   nunc vitae volutpat libero fusce sit amet mi quis ipsum tempus
                   gravida in quis felis Aliquam fringilla tempus scelerisque Phasellus viverra tincidunt

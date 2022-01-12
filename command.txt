@@ -7,3 +7,82 @@ dotnet ef dbcontext scaffold "Server=.\;Database=AiManager;Trusted_Connection=Tr
 
 client project
 npx create-react-app client --template typescript --use-npm 
+
+
+
+Account created
+Here you can find all the details needed to access your new Ethereal test account. Remember that if sending messages through SMTP then no message is actually delivered, all messages are caught and you can see these in the Messages page or by using your favorite IMAP/POP3 client.
+
+Account credentials
+Account details generated using Faker.js
+
+NB! these credentials are shown only once. If you do not write these down then you have to create a new account.
+
+Name	Berenice Spencer
+Username	berenice.spencer80@ethereal.email (also works as a real inbound email address)
+Password	yEx1teF9Nxhuq4b1Kt
+ 
+
+Nodemailer configuration
+const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: 'berenice.spencer80@ethereal.email',
+        pass: 'yEx1teF9Nxhuq4b1Kt'
+    }
+});
+PHPMailer configuration
+$mail = new PHPMailer(true);
+$mail->isSMTP();
+$mail->Host = 'smtp.ethereal.email';
+$mail->SMTPAuth = true;
+$mail->Username = 'berenice.spencer80@ethereal.email';
+$mail->Password = 'yEx1teF9Nxhuq4b1Kt';
+$mail->SMTPSecure = 'tls';
+$mail->Port = 587;
+SwiftMailer configuration
+$transport = (new Swift_SmtpTransport('smtp.ethereal.email', 587, 'tls'))
+  ->setUsername('berenice.spencer80@ethereal.email')
+  ->setPassword('yEx1teF9Nxhuq4b1Kt');
+
+  
+SMTP configuration
+Host	smtp.ethereal.email
+Port	587
+Security	STARTTLS
+Username	berenice.spencer80@ethereal.email
+Password	yEx1teF9Nxhuq4b1Kt
+
+"EmailFrom": "info@dotnet-signup-verification-api.com",
+    "SmtpHost": "smtp.gmail.com",
+    "SmtpPort": 587,
+    "SmtpUser": "elonshiba93@gmail.com",
+    "SmtpPass": "Wizard4life#"
+IMAP configuration
+Host	imap.ethereal.email
+Port	993
+Security	TLS
+Username	berenice.spencer80@ethereal.email
+Password	yEx1teF9Nxhuq4b1Kt
+POP3 configuration
+Host	pop3.ethereal.email
+Port	995
+Security	TLS
+Username	berenice.spencer80@ethereal.email
+Password	yEx1teF9Nxhuq4b1Kt
+
+
+Select type of use
+
+check boxes
+Campaign tracking
+Completion analysis
+Crisis Management
+Real-time news tracking
+Sentiment tracking
+Brand monitoring
+Market research
+Trend analysis
+API
+Other

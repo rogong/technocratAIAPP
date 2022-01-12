@@ -18,6 +18,8 @@ namespace API.Helpers
             .ForMember(d => d.Product, o => o.MapFrom(s => s.Product.ProductName))
             .ForMember(d => d.Market, o => o.MapFrom(s => s.Market.Name))
             .ForMember(d => d.Region, o => o.MapFrom(s => s.Region.Name));
+
+            CreateMap<User, RegisterDto>();
             
         }
     }

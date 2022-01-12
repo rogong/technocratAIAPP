@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using API.Entities;
 
 namespace API.Dtos
 {
@@ -28,7 +25,9 @@ namespace API.Dtos
         public string Market  { get; set; }
       
         public string Product  { get; set; }
-      
+        //New 
+       
+
         public string Region  { get; set; }
       
         public string TopicLevel1  { get; set; }

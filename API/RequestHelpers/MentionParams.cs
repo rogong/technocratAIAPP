@@ -7,7 +7,10 @@ namespace API.RequestHelpers
         public string DataSources { get; set; }
         public string Markets { get; set; }
         public string Regions { get; set; }
-         public string Products { get; set; }
+        public string Products { get; set; }
         public string Languages { get; set; }
+        public string Mention { get; set;}
+        public string Brands { get; set; } 
+        public string Competitions { get; set; }
     }
 }

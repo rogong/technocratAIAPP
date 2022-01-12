@@ -44,5 +44,6 @@
         public virtual TopicLevel2 TopicLevel2 { get; set; }
       
         public virtual TopicLevel3 TopicLevel3 { get; set; }
+       
     }
 }

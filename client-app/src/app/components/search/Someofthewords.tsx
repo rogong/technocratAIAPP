@@ -1,16 +1,20 @@
-import { TextField } from '@mui/material'
+import { Paper, TextField } from '@mui/material'
 
 
-export default function Someofthewords() {
+export default function Someofthewords({termx}: any) {
     return (
         <>
-            <fieldset>
+        <fieldset>
+            <Paper>
             <TextField
           label="Some of these words"
-          id="outlined-size-small"
+         
           defaultValue="Add keywords or phrase"
-          size="small"
+        
+          variant='outlined'
+          fullWidth
         />
+            </Paper>
             </fieldset>
             
         </>

@@ -28,6 +28,8 @@ export default function Feed() {
     markets,
     regions,
     products,
+    brands,
+    competitions,
     feedParams,
     metaData,
   } = useAppSelector((state) => state.feed);
@@ -41,9 +43,12 @@ export default function Feed() {
     if (!filtersLoaded) dispatch(fetchFilters());
   }, [filtersLoaded, dispatch]);
 
+ 
+
   if (!filtersLoaded)
     return <LoadingComponent message="Loading Feeds..." />;
   return (
+    
     <>
       <Grid container spacing={1} sx={{ mt: 6 }}>
         {/* Left Side */}
@@ -71,6 +76,7 @@ export default function Feed() {
             <FeedSearch />
           </Paper>
           <Paper sx={{ mb: 2, p: 2 }}>
+          <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>New/Old</Typography>
             <RadioButtonGroup
               selectedValue={feedParams.orderBy}
               options={sortOptions}
@@ -79,9 +85,21 @@ export default function Feed() {
               }
             />
           </Paper>
+          
+          <Paper sx={{ mb: 2, p: 2 }}>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Brand</Typography>
+            <CheckboxButtons
+           
+          items={brands.filter(x => x !== null)}
+          checked={feedParams.brands}
+              onChange={(items: string[]) =>
+            dispatch(setFeedParams({ brands: items }))
+              }
+            />
+            </Paper>
 
           <Paper sx={{ mb: 2, p: 2 }}>
-            <Typography variant="h6">Data Source</Typography>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Data Source</Typography>
             <CheckboxButtons
               items={datasources}
               checked={feedParams.datasources}
@@ -91,7 +109,7 @@ export default function Feed() {
             />
           </Paper>
           <Paper sx={{ mb: 2, p: 2 }}>
-            <Typography variant="h6">Market</Typography>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Market</Typography>
 
             <CheckboxButtons
               items={markets}
@@ -102,7 +120,7 @@ export default function Feed() {
             />
           </Paper>
           <Paper sx={{ mb: 2, p: 2 }}>
-            <Typography variant="h6">Region</Typography>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Region</Typography>
             <CheckboxButtons
               items={regions}
               checked={feedParams.regions}
@@ -112,7 +130,7 @@ export default function Feed() {
             />
           </Paper>
           <Paper sx={{ mb: 2, p: 2 }}>
-            <Typography variant="h6">Product</Typography>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Product</Typography>
             <CheckboxButtons
               items={products}
               checked={feedParams.products}
@@ -121,6 +139,17 @@ export default function Feed() {
               }
             />
           </Paper>
+          <Paper sx={{ mb: 2, p: 2 }}>
+            <Typography variant="h6" sx={{fontWeight: 'bold', color: 'InfoText'}}>Competitors</Typography>
+            <CheckboxButtons
+           
+          items={competitions.filter(x => x !== null)}
+          checked={feedParams.competitions}
+              onChange={(items: string[]) =>
+            dispatch(setFeedParams({ competitions: items }))
+              }
+            />
+            </Paper>
         </Grid>
       </Grid>
     </>

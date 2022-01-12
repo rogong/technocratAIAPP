@@ -1,6 +1,5 @@
 import  { useState } from 'react';
-import { Paper, Chip } from '@mui/material';
-import TagFacesIcon from '@mui/icons-material/TagFaces';
+import { Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 interface ChipData {
@@ -14,13 +13,10 @@ interface ChipData {
 
 
 
-export default function Allofthewords() {
+export default function Allofthewords({term} : any) {
     const [chipData, setChipData] = useState<readonly ChipData[]>([
-        { key: 0, label: 'Angular' },
-        { key: 1, label: 'jQuery' },
-        { key: 2, label: 'Polymer' },
-        { key: 3, label: 'React' },
-        { key: 4, label: 'Vue.js' },
+        { key: 0, label: term },
+      
       ]);
       const handleDelete = (chipToDelete: ChipData) => () => {
         setChipData((chips) =>
@@ -28,7 +24,8 @@ export default function Allofthewords() {
         );
       };
     return (
-        <Paper
+      <fieldset>
+        {/* <Paper
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -36,19 +33,23 @@ export default function Allofthewords() {
                 listStyle: 'none',
                 p: 0.5,
                 m: 0,
+
               }}
               component="ul"
-            >
+            > */}
+
+           
                
               {chipData.map((data) => {
                 let icon;
 
-                if (data.label === 'React') {
-                  icon = <TagFacesIcon />;
-                }
+                // if (data.label === 'React') {
+                //   icon = <TagFacesIcon />;
+                // }
 
                 return (
-                  <ListItem key={data.key}>
+                
+                 <ListItem key={data.key}>
                     <Chip
                       icon={icon}
                       label={data.label}
@@ -57,8 +58,11 @@ export default function Allofthewords() {
                       }
                     />
                   </ListItem>
+                 
                 );
               })}
-            </Paper>
+              
+            {/* </Paper> */}
+        </fieldset>
     )
 }

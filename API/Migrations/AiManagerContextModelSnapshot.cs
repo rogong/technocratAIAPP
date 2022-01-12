@@ -96,7 +96,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "UserId" }, "IX_AbpAuditLogs_TenantId_UserId");
 
-                    b.ToTable("AbpAuditLogs");
+                    b.ToTable("AbpAuditLogs", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpBackgroundJob", b =>
@@ -141,7 +141,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "IsAbandoned", "NextTryTime" }, "IX_AbpBackgroundJobs_IsAbandoned_NextTryTime");
 
-                    b.ToTable("AbpBackgroundJobs");
+                    b.ToTable("AbpBackgroundJobs", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpDynamicEntityProperty", b =>
@@ -170,7 +170,7 @@ namespace API.Migrations
                         .IsUnique()
                         .HasFilter("([EntityFullName] IS NOT NULL AND [TenantId] IS NOT NULL)");
 
-                    b.ToTable("AbpDynamicEntityProperties");
+                    b.ToTable("AbpDynamicEntityProperties", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpDynamicEntityPropertyValue", b =>
@@ -198,7 +198,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "DynamicEntityPropertyId" }, "IX_AbpDynamicEntityPropertyValues_DynamicEntityPropertyId");
 
-                    b.ToTable("AbpDynamicEntityPropertyValues");
+                    b.ToTable("AbpDynamicEntityPropertyValues", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpDynamicProperty", b =>
@@ -231,7 +231,7 @@ namespace API.Migrations
                         .IsUnique()
                         .HasFilter("([PropertyName] IS NOT NULL AND [TenantId] IS NOT NULL)");
 
-                    b.ToTable("AbpDynamicProperties");
+                    b.ToTable("AbpDynamicProperties", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpDynamicPropertyValue", b =>
@@ -256,7 +256,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "DynamicPropertyId" }, "IX_AbpDynamicPropertyValues_DynamicPropertyId");
 
-                    b.ToTable("AbpDynamicPropertyValues");
+                    b.ToTable("AbpDynamicPropertyValues", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpEdition", b =>
@@ -327,7 +327,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AbpEditions");
+                    b.ToTable("AbpEditions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpEntityChange", b =>
@@ -364,7 +364,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "EntityTypeFullName", "EntityId" }, "IX_AbpEntityChanges_EntityTypeFullName_EntityId");
 
-                    b.ToTable("AbpEntityChanges");
+                    b.ToTable("AbpEntityChanges", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpEntityChangeSet", b =>
@@ -417,7 +417,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "UserId" }, "IX_AbpEntityChangeSets_TenantId_UserId");
 
-                    b.ToTable("AbpEntityChangeSets");
+                    b.ToTable("AbpEntityChangeSets", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpEntityPropertyChange", b =>
@@ -460,7 +460,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "EntityChangeId" }, "IX_AbpEntityPropertyChanges_EntityChangeId");
 
-                    b.ToTable("AbpEntityPropertyChanges");
+                    b.ToTable("AbpEntityPropertyChanges", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpFeature", b =>
@@ -503,7 +503,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "Name" }, "IX_AbpFeatures_TenantId_Name");
 
-                    b.ToTable("AbpFeatures");
+                    b.ToTable("AbpFeatures", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpLanguage", b =>
@@ -562,7 +562,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "Name" }, "IX_AbpLanguages_TenantId_Name");
 
-                    b.ToTable("AbpLanguages");
+                    b.ToTable("AbpLanguages", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpLanguageText", b =>
@@ -611,7 +611,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "Source", "LanguageName", "Key" }, "IX_AbpLanguageTexts_TenantId_Source_LanguageName_Key");
 
-                    b.ToTable("AbpLanguageTexts");
+                    b.ToTable("AbpLanguageTexts", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpNotification", b =>
@@ -663,7 +663,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AbpNotifications");
+                    b.ToTable("AbpNotifications", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpNotificationSubscription", b =>
@@ -705,7 +705,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "NotificationName", "EntityTypeName", "EntityId", "UserId" }, "IX_AbpNotificationSubscriptions_TenantId_NotificationName_EntityTypeName_EntityId_UserId");
 
-                    b.ToTable("AbpNotificationSubscriptions");
+                    b.ToTable("AbpNotificationSubscriptions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpOrganizationUnit", b =>
@@ -759,7 +759,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "Code" }, "IX_AbpOrganizationUnits_TenantId_Code");
 
-                    b.ToTable("AbpOrganizationUnits");
+                    b.ToTable("AbpOrganizationUnits", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpOrganizationUnitRole", b =>
@@ -794,7 +794,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "RoleId" }, "IX_AbpOrganizationUnitRoles_TenantId_RoleId");
 
-                    b.ToTable("AbpOrganizationUnitRoles");
+                    b.ToTable("AbpOrganizationUnitRoles", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpPermission", b =>
@@ -840,7 +840,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpPermissions_UserId");
 
-                    b.ToTable("AbpPermissions");
+                    b.ToTable("AbpPermissions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpPersistedGrant", b =>
@@ -892,7 +892,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "SubjectId", "SessionId", "Type" }, "IX_AbpPersistedGrants_SubjectId_SessionId_Type");
 
-                    b.ToTable("AbpPersistedGrants");
+                    b.ToTable("AbpPersistedGrants", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpRole", b =>
@@ -962,7 +962,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "NormalizedName" }, "IX_AbpRoles_TenantId_NormalizedName");
 
-                    b.ToTable("AbpRoles");
+                    b.ToTable("AbpRoles", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpRoleClaim", b =>
@@ -998,7 +998,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "ClaimType" }, "IX_AbpRoleClaims_TenantId_ClaimType");
 
-                    b.ToTable("AbpRoleClaims");
+                    b.ToTable("AbpRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpSetting", b =>
@@ -1043,7 +1043,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpSettings_UserId");
 
-                    b.ToTable("AbpSettings");
+                    b.ToTable("AbpSettings", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpTenant", b =>
@@ -1133,7 +1133,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenancyName" }, "IX_AbpTenants_TenancyName");
 
-                    b.ToTable("AbpTenants");
+                    b.ToTable("AbpTenants", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpTenantNotification", b =>
@@ -1181,7 +1181,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_AbpTenantNotifications_TenantId");
 
-                    b.ToTable("AbpTenantNotifications");
+                    b.ToTable("AbpTenantNotifications", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUser", b =>
@@ -1323,7 +1323,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "NormalizedUserName" }, "IX_AbpUsers_TenantId_NormalizedUserName");
 
-                    b.ToTable("AbpUsers");
+                    b.ToTable("AbpUsers", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserAccount", b =>
@@ -1384,7 +1384,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserName" }, "IX_AbpUserAccounts_UserName");
 
-                    b.ToTable("AbpUserAccounts");
+                    b.ToTable("AbpUserAccounts", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserClaim", b =>
@@ -1420,7 +1420,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpUserClaims_UserId");
 
-                    b.ToTable("AbpUserClaims");
+                    b.ToTable("AbpUserClaims", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserLogin", b =>
@@ -1455,7 +1455,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpUserLogins_UserId");
 
-                    b.ToTable("AbpUserLogins");
+                    b.ToTable("AbpUserLogins", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserLoginAttempt", b =>
@@ -1504,7 +1504,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId", "TenantId" }, "IX_AbpUserLoginAttempts_UserId_TenantId");
 
-                    b.ToTable("AbpUserLoginAttempts");
+                    b.ToTable("AbpUserLoginAttempts", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserNotification", b =>
@@ -1531,7 +1531,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId", "State", "CreationTime" }, "IX_AbpUserNotifications_UserId_State_CreationTime");
 
-                    b.ToTable("AbpUserNotifications");
+                    b.ToTable("AbpUserNotifications", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserOrganizationUnit", b =>
@@ -1571,7 +1571,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpUserOrganizationUnits_UserId");
 
-                    b.ToTable("AbpUserOrganizationUnits");
+                    b.ToTable("AbpUserOrganizationUnits", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserRole", b =>
@@ -1605,7 +1605,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpUserRoles_UserId");
 
-                    b.ToTable("AbpUserRoles");
+                    b.ToTable("AbpUserRoles", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpUserToken", b =>
@@ -1643,7 +1643,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_AbpUserTokens_UserId");
 
-                    b.ToTable("AbpUserTokens");
+                    b.ToTable("AbpUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpWebhookEvent", b =>
@@ -1672,7 +1672,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AbpWebhookEvents");
+                    b.ToTable("AbpWebhookEvents", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpWebhookSendAttempt", b =>
@@ -1705,7 +1705,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "WebhookEventId" }, "IX_AbpWebhookSendAttempts_WebhookEventId");
 
-                    b.ToTable("AbpWebhookSendAttempts");
+                    b.ToTable("AbpWebhookSendAttempts", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AbpWebhookSubscription", b =>
@@ -1741,7 +1741,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AbpWebhookSubscriptions");
+                    b.ToTable("AbpWebhookSubscriptions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Account", b =>
@@ -1825,7 +1825,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_AppBinaryObjects_TenantId");
 
-                    b.ToTable("AppBinaryObjects");
+                    b.ToTable("AppBinaryObjects", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppChatMessage", b =>
@@ -1877,7 +1877,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "UserId", "ReadState" }, "IX_AppChatMessages_TenantId_UserId_ReadState");
 
-                    b.ToTable("AppChatMessages");
+                    b.ToTable("AppChatMessages", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppFriendship", b =>
@@ -1927,7 +1927,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "UserId" }, "IX_AppFriendships_TenantId_UserId");
 
-                    b.ToTable("AppFriendships");
+                    b.ToTable("AppFriendships", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppInvoice", b =>
@@ -1955,7 +1955,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppInvoices");
+                    b.ToTable("AppInvoices", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppSubscriptionPayment", b =>
@@ -2040,7 +2040,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "Status", "CreationTime" }, "IX_AppSubscriptionPayments_Status_CreationTime");
 
-                    b.ToTable("AppSubscriptionPayments");
+                    b.ToTable("AppSubscriptionPayments", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppSubscriptionPaymentsExtensionDatum", b =>
@@ -2069,7 +2069,7 @@ namespace API.Migrations
                         .IsUnique()
                         .HasFilter("([Key] IS NOT NULL)");
 
-                    b.ToTable("AppSubscriptionPaymentsExtensionData");
+                    b.ToTable("AppSubscriptionPaymentsExtensionData", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AppUserDelegation", b =>
@@ -2122,7 +2122,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId", "TargetUserId" }, "IX_AppUserDelegations_TenantId_TargetUserId");
 
-                    b.ToTable("AppUserDelegations");
+                    b.ToTable("AppUserDelegations", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.AverageSentimentByDataSource", b =>
@@ -2248,7 +2248,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_Brands_TenantId");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Competition", b =>
@@ -2275,7 +2275,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_Competitions_TenantId");
 
-                    b.ToTable("Competitions");
+                    b.ToTable("Competitions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.DataSource", b =>
@@ -2311,7 +2311,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_DataSources_TenantId");
 
-                    b.ToTable("DataSources");
+                    b.ToTable("DataSources", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.GrowthLevel1", b =>
@@ -2395,7 +2395,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_Markets_TenantId");
 
-                    b.ToTable("Markets");
+                    b.ToTable("Markets", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Mention", b =>
@@ -2496,7 +2496,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TopicLevel3Id" }, "IX_Mentions_TopicLevel3Id");
 
-                    b.ToTable("Mentions");
+                    b.ToTable("Mentions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.MostSearchedLevel2Topic", b =>
@@ -2667,7 +2667,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TopicCategoryId" }, "IX_Products_TopicCategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.ProductClassification", b =>
@@ -2694,7 +2694,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_ProductClassifications_TenantId");
 
-                    b.ToTable("ProductClassifications");
+                    b.ToTable("ProductClassifications", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.ProductsAmazonReview", b =>
@@ -5590,7 +5590,51 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_ProductTypes_TenantId");
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductTypes", (string)null);
+                });
+
+            modelBuilder.Entity("API.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedByIp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReplacedByToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RevokedByIp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshToken", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Region", b =>
@@ -5617,7 +5661,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_Regions_TenantId");
 
-                    b.ToTable("Regions");
+                    b.ToTable("Regions", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Search", b =>
@@ -5704,7 +5748,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TopicLevel3Id" }, "IX_Searches_TopicLevel3Id");
 
-                    b.ToTable("Searches");
+                    b.ToTable("Searches", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.SearchVolumeByMonth", b =>
@@ -5857,7 +5901,7 @@ namespace API.Migrations
                     b.HasIndex(new[] { "FullDateAlternateKey" }, "AK_TimePeriod_FullDateAlternateKey")
                         .IsUnique();
 
-                    b.ToTable("TimePeriods");
+                    b.ToTable("TimePeriods", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.TopicCategory", b =>
@@ -5884,7 +5928,7 @@ namespace API.Migrations
 
                     b.HasIndex(new[] { "TenantId" }, "IX_TopicCategories_TenantId");
 
-                    b.ToTable("TopicCategories");
+                    b.ToTable("TopicCategories", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.TopicLevel1", b =>
@@ -6194,12 +6238,21 @@ namespace API.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -6218,21 +6271,42 @@ namespace API.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("PasswordReset")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ResetToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ResetTokenExpires")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime?>("Updated")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("VerificationToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Verified")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -6276,15 +6350,15 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "dd940d9b-ee25-4a66-a119-1953abbba4b5",
-                            ConcurrencyStamp = "d54fe8c2-c813-4a53-a63a-5a2e30ffd81b",
+                            Id = "a188478c-5ecc-4423-bb2c-3cc516b67bf5",
+                            ConcurrencyStamp = "69310e20-7d43-4161-9aa0-2360a12230a7",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
-                            Id = "09baff31-0f9a-48a8-ab7b-4b5b28b3a619",
-                            ConcurrencyStamp = "7ab2361e-07bb-4f87-816e-f3f216756061",
+                            Id = "ca53eb66-78fd-4624-8b16-0ba09f954116",
+                            ConcurrencyStamp = "e28c4fea-1b83-4448-9b63-a14eb68f955d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -6844,6 +6918,19 @@ namespace API.Migrations
                     b.Navigation("Yelp");
                 });
 
+            modelBuilder.Entity("API.Entities.RefreshToken", b =>
+                {
+                    b.HasOne("API.Entities.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId");
+
+                    b.HasOne("API.Entities.User", null)
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Account");
+                });
+
             modelBuilder.Entity("API.Entities.Search", b =>
                 {
                     b.HasOne("API.Entities.DataSource", "DataSource")
@@ -7217,6 +7304,11 @@ namespace API.Migrations
                     b.Navigation("Mentions");
 
                     b.Navigation("Searches");
+                });
+
+            modelBuilder.Entity("API.Entities.User", b =>
+                {
+                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }

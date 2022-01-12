@@ -19,12 +19,6 @@ export default function RightResultPage() {
     const {
       feedsLoaded,
       filtersLoaded,
-      datasources,
-      markets,
-      regions,
-      products,
-      feedParams,
-      metaData,
     } = useAppSelector((state) => state.feed);
     const dispatch = useAppDispatch();
   

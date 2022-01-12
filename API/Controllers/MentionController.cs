@@ -33,8 +33,15 @@ namespace API.Controllers
                 .Include(m => m.Region)
                 .Sort(mentionParams.OrderBy)
                 .Search(mentionParams.SearchTerm)
-                .Filter(mentionParams.DataSources, mentionParams.Regions,
-                mentionParams.Markets,mentionParams.Products,mentionParams.Languages)
+                .Filter(
+                mentionParams.DataSources, 
+                mentionParams.Regions,
+                mentionParams.Markets,
+                mentionParams.Products,
+                mentionParams.Languages,
+                mentionParams.Brands,
+                mentionParams.Competitions
+                )
                 .AsQueryable();
 
                
@@ -50,7 +57,7 @@ namespace API.Controllers
             
                 return Ok(data);
         }
-
+        
         [HttpGet("filters")]
         public async Task<IActionResult> GetFilters()
         {
@@ -59,8 +66,11 @@ namespace API.Controllers
             var regions = await _context.Mentions.Select(m => m.Region.Name).Distinct().ToListAsync();
             var products = await _context.Mentions.Select(m => m.Product.ProductName).Distinct().ToListAsync();
             var languages = await _context.Mentions.Select(m => m.Language.DisplayName).Distinct().ToListAsync();
-
-            return Ok(new {datasources, markets, regions, products, languages});
+             var brands = await _context.Mentions.Select(m => m.Product.Brand.Name)
+                .Distinct().ToListAsync();
+            var competitions = await _context.Mentions.Select(m => m.Product.Competition.Name)
+                .Distinct().ToListAsync();
+            return Ok(new {datasources, markets, regions, products, languages, brands,competitions});
             
         }
     }
